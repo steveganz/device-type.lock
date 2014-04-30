@@ -18,6 +18,17 @@
  *        usercodechange
  */
 metadata {
+	definition (name: "Custom Lock", author: "bigpunk6") {
+		capability "Configuration"
+		capability "Lock"
+		capability "Polling"
+		capability "Battery"
+
+		attribute "user1", "string"
+		attribute "code1", "string"
+
+		command "usercodechange"
+	}
 	simulator {
 		status "locked": "command: 9881, payload: 00 62 03 FF 00 00 FE FE"
 		status "unlocked": "command: 9881, payload: 00 62 03 00 00 00 FE FE"
